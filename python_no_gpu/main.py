@@ -46,8 +46,14 @@ def captions():
     path=fp.get("1.0","end-1c")
     x=int(x)
     cations=gen_cap(path,x)
+    captions=[]
     for i in cations:
-        hi.insert(tk.END,i)
+        if type(i)==str:
+            captions.append(i)
+        else:
+            captions.append(i[0])
+    for i in captions:
+        hi.insert(tk.END,i+"\n")
 
 def display():
     path=fp.get("1.0","end-1c")
