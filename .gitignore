@@ -2,4 +2,3 @@
 *.jpg
 *.jpeg
 __pycache__
-stream.py
