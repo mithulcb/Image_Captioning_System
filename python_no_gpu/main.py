@@ -69,7 +69,7 @@ def delet():
 welcome= tk.Label(root, text="Welcome.\n\nImage Caption Generator.",font=('Helevetica',24))
 welcome.pack()
 
-browse_button = tk.Button(root, text="Browse For Image", command=upload_image,fg="white",bg="black",activebackground="white",activeforeground="black")
+browse_button = tk.Button(root, text="Browse For Image", command=upload_image)
 browse_button.pack()
 
 fp=tk.Text(root,height=1,width=10)
@@ -81,14 +81,14 @@ n.pack()
 t=tk.Text(root,height=1,width=10)
 t.pack()
 
-button = tk.Button(root, text="Display Image", command=display,fg="white",bg="black",activebackground="white",activeforeground="black")
+button = tk.Button(root, text="Display Image", command=display)
 button.pack()
 
-cap_button = tk.Button(root, text="Captions", command=captions,fg="white",bg="black",activebackground="white",activeforeground="black")
+cap_button = tk.Button(root, text="Captions", command=captions)
 cap_button.pack()
 
 
-del_button = tk.Button(root, text="Clear", command=delet,fg="white",bg="black",activebackground="white",activeforeground="black")
+del_button = tk.Button(root, text="Clear", command=delet)
 del_button.pack()
 
 hi=tk.Text(root,height=10,width=80)
