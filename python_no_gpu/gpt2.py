@@ -13,12 +13,11 @@ model1.to(device1)
 def predict_step(new_captions,image_paths,diversity,penalty,temp,topp,topk):
   gen_kwargs = {"max_length": 16, "num_beams": 4, "num_beam_groups":2, "diversity_penalty":diversity,"penalty_alpha":penalty,"temperature":temp,"top_p":topp,"top_k":topk}
   images = []
-  for image_path in image_paths:
-    i_image = Image.open(image_path)
-    if i_image.mode != "RGB":
-      i_image = i_image.convert(mode="RGB")
+  i_image = Image.open(image_paths)
+  if i_image.mode != "RGB":
+    i_image = i_image.convert(mode="RGB")
 
-    images.append(i_image)
+  images.append(i_image)
 
   pixel_values = feature_extractor1(images=images, return_tensors="pt").pixel_values
   pixel_values = pixel_values.to(device1)
