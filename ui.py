@@ -51,18 +51,16 @@ def captions():
 
 def display():
     path=fp.get("1.0","end-1c")
-    img = Image.open(path)
-    img.thumbnail((200,200))
-    photo = ImageTk.PhotoImage(img)
-    label = tk.Label(root, image=photo)
-    label.config(image=photo)
-    label.image = photo
-    label.pack()
-    def delet():
-        fp.delete("1.0","end")
-        hi.delete("1.0","end")
-        t.delete("1.0","end")
-        label.destroy()
+    im = Image.open(path) 
+    im.show() 
+    
+
+
+def delet():
+    fp.delete("1.0","end")
+    hi.delete("1.0","end")
+    t.delete("1.0","end")
+
 
 
     
@@ -83,14 +81,14 @@ n.pack()
 t=tk.Text(root,height=1,width=10)
 t.pack()
 
-display_button = tk.Button(root, text="Display", command=display)
-display_button.pack()
+button = tk.Button(root, text="Display Image", command=display)
+button.pack()
 
 cap_button = tk.Button(root, text="Captions", command=captions)
 cap_button.pack()
 
 
-del_button = tk.Button(root, text="Clear", command=display.delet)
+del_button = tk.Button(root, text="Clear", command=delet)
 del_button.pack()
 
 hi=tk.Text(root,height=10,width=80)
