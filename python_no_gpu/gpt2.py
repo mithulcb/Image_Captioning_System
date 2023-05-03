@@ -27,6 +27,5 @@ def predict_step(new_captions,image_paths,diversity,penalty,temp,topp,topk):
   output_ids = model1.generate(pixel_values, **gen_kwargs)
 
   preds = tokenizer1.batch_decode(output_ids, skip_special_tokens=True)
-  preds = [pred.strip() for pred in preds]
   new_captions.append(preds)
   return new_captions
